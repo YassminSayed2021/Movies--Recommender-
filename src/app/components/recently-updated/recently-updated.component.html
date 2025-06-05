@@ -1,0 +1,25 @@
+<div class="container my-4">
+  <h2>Recently Updated</h2>
+
+  <div class="position-relative">
+    <button (click)="scrollLeft()"
+            class="btn btn-outline-light btn-sm position-absolute start-0 top-50 translate-middle-y z-3">
+      ‹
+    </button>
+
+    <div #scrollContainer class="d-flex gap-3 overflow-auto px-5 py-2"
+         style="scroll-behavior: smooth; white-space: nowrap;">
+      @for (show of newShows; track show.id) {
+        <div class="text-center flex-shrink-0" style="width: 120px;">
+          <img [src]="'https://image.tmdb.org/t/p/w185' + show.poster_path" class="img-fluid rounded" />
+          <small class="d-block mt-1 text-white text-truncate">{{ show.name }}</small>
+        </div>
+      }
+    </div>
+
+    <button (click)="scrollRight()"
+            class="btn btn-outline-light btn-sm position-absolute end-0 top-50 translate-middle-y z-3">
+      ›
+    </button>
+  </div>
+</div>

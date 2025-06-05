@@ -1,11 +1,24 @@
     .movie-card {
-      width: 282px;
+      width:100%;
       border-radius: 10px;
       overflow: hidden;
       background-color: #000;
       color: #fff;
       font-family: Arial, sans-serif;
+      min-height: 540px;
     }
+
+    .card-wrapper {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 8px;
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
 
     .movie-poster {
       position: relative;
@@ -43,3 +56,18 @@
     .badge-custom i {
       font-size: 0.9rem;
     }
+
+
+
+.movie-poster {
+  overflow: hidden;
+}
+
+.movie-poster img {
+  transition: transform 0.4s ease;
+}
+
+.movie-card:hover .movie-poster img {
+  transform: scale(1.1);
+}
+

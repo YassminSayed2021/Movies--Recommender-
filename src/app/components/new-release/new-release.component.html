@@ -1,6 +1,7 @@
+
 <h2 class="mt-4">New Movies</h2>
-<div class="text-end mb-2">
-  <button class="btn btn-outline-light btn-sm" (click)="showAllMovies = !showAllMovies">
+<div class="d-flex justify-content-end mb-2">
+  <button class="btn btn-outline-light btn-sm view" (click)="showAllMovies = !showAllMovies">
     {{ showAllMovies ? 'Show Less' : 'View All' }}
   </button>
 </div>
@@ -16,10 +17,11 @@
 
 
 <h2 class="mt-4">New Series</h2>
-<div class="text-end mt-3">
-  <button class="btn btn-outline-light btn-sm" (click)="showAllSeries = !showAllSeries">
+<div class="d-flex justify-content-end mb-2">
+  <button class="btn btn-outline-light btn-sm view" (click)="showAllSeries = !showAllSeries">
     {{ showAllSeries ? 'Show Less' : 'View All' }}
   </button>
+</div>
 <div class="row g-3">
   @for (series of showAllSeries ? newSeries : newSeries.slice(0,6); track series.id) {
         <div class="col-6 col-sm-4 col-md-3 col-lg-2">

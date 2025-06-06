@@ -1,0 +1,19 @@
+.navbar {
+  background-color: #000;
+  height: auto;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.ms-n4 {
+  margin-left: -40px;
+  z-index: 10;
+  position: relative;
+}
+.search-btn {
+  border: none;
+}

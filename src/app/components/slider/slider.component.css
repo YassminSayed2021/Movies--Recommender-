@@ -1,0 +1,33 @@
+.carousel-img {
+  height: 500px;
+  object-fit: fill;
+  width: 100%;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Adjust darkness here */
+  z-index: 1;
+}
+
+.carousel-caption-custom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: default;
+  z-index: 2; /* Above the overlay */
+}

@@ -1,0 +1,19 @@
+.fab {
+  transition: color 0.3s ease;
+}
+
+.fab.fa-facebook-f:hover {
+  color: #1877f2;
+}
+
+.fab.fa-twitter:hover {
+  color: #1da1f2;
+}
+
+.fab.fa-instagram:hover {
+  color: #e4405f;
+}
+
+.fab.fa-youtube:hover {
+  color: #ff0000;
+}

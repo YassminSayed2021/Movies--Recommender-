@@ -3,6 +3,7 @@ import { RecentlyUpdatedComponent } from '../recently-updated/recently-updated.c
 import { NewReleaseComponent } from '../new-release/new-release.component';
 import { HeaderComponent } from '../header/header.component';
 import { SliderComponent } from '../slider/slider.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home-page',
@@ -11,6 +12,7 @@ import { SliderComponent } from '../slider/slider.component';
     NewReleaseComponent,
     HeaderComponent,
     SliderComponent,
+    FooterComponent,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',

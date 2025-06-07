@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { RecentlyUpdatedComponent } from "../recently-updated/recently-updated.component";
 import { NewReleaseComponent } from "../new-release/new-release.component";
 import { RecommendedComponent } from "../recommended/recommended.component";
+import { AiChatComponent } from "../ai-chat/ai-chat.component";
 
 @Component({
   selector: 'app-home-page',
-  imports: [RecentlyUpdatedComponent, NewReleaseComponent, RecommendedComponent],
+  imports: [RecentlyUpdatedComponent, NewReleaseComponent, RecommendedComponent, AiChatComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })

@@ -1,0 +1,63 @@
+<!-- <div class="chatbox" *ngIf="isOpen">
+  <div class="messages">
+    <div *ngFor="let msg of messages" [ngClass]="msg.sender">
+      <strong>{{ msg.sender === 'user' ? 'You' : 'Bot' }}:</strong> {{ msg.text }}
+    </div>
+  </div>
+
+  <input [(ngModel)]="userMessage" placeholder="Type your message..." (keyup.enter)="sendMessage()" />
+  <button (click)="sendMessage()">Send</button>
+</div>
+
+<button (click)="toggleChat()">   
+
+  {{ isOpen ? 'Close Chat' : 'Open Chat' }}
+</button> -->
+
+
+<div class="chat-container" *ngIf="isOpen">
+  <div class="card shadow-sm mx-auto" style="max-width: 500px; height: 600px; display: flex; flex-direction: column;">
+    <!-- Header -->
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+      <h5 class="mb-0"><i class="fas fa-robot me-2"></i> AI Chatbot</h5>
+      <button class="btn btn-outline-light btn-sm" (click)="toggleChat()" aria-label="Close chat">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- Messages Body -->
+    <div class="card-body overflow-auto flex-grow-1 p-3" style="background: #f8f9fa;">
+      <div *ngFor="let msg of messages">
+        <div class="d-flex mb-3" 
+             [class.justify-content-end]="msg.sender === 'user'" 
+             [class.justify-content-start]="msg.sender === 'bot'">
+          <div class="message p-3 rounded shadow-sm"
+               [class.bg-primary]="msg.sender === 'user'" 
+               [class.text-white]="msg.sender === 'user'"
+               [class.bg-light]="msg.sender === 'bot'" 
+               [class.text-dark]="msg.sender === 'bot'"
+               style="max-width: 70%; word-wrap: break-word;">
+            <small class="fw-bold d-block mb-1" *ngIf="msg.sender === 'user'">You</small>
+            <small class="fw-bold d-block mb-1" *ngIf="msg.sender === 'bot'">Bot</small>
+            <p class="mb-0">{{ msg.text }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Footer -->
+    <div class="card-footer bg-white d-flex align-items-center">
+      <input type="text" class="form-control me-2" placeholder="Type your message..." [(ngModel)]="userMessage" (keydown.enter)="sendMessage()" />
+      <button class="btn btn-primary" (click)="sendMessage()" aria-label="Send message">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Chat toggle button when closed -->
+<div class="chat-toggle-button" *ngIf="!isOpen">
+  <button class="btn btn-primary rounded-circle p-3 shadow-lg" (click)="toggleChat()" aria-label="Open chat">
+    <i class="fas fa-comments fa-lg"></i>
+  </button>
+</div>

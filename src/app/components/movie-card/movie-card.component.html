@@ -1,12 +1,27 @@
-<div class="movie-card shadow-sm p-2 bg-black rounded text-white">
+<!-- <div class="movie-card shadow-sm p-2 bg-black rounded text-white">
     <div class="movie-poster mb-2">
         <img [src]="'https://image.tmdb.org/t/p/w185' + data.poster_path" 
   alt="film poster">
     </div>
-        <div lass="movie-title fw-semibold small text-truncate">{{data.title || data.name}}</div>
+        <div class="movie-title fw-semibold small text-truncate">{{data.title || data.name}}</div>
     <div class="movie-meta d-flex flex-wrap gap-2 mt-1">
       <div class="badge-custom small">{{data.origin_country||data.original_language}}</div>
       <div class="badge-custom small"><i class="fas fa-calendar-alt"></i> {{data.release_date || data.first_air_date}}</div>
     </div>
+  </div> -->
+
+
+  <div class="movie-card shadow-sm p-2 bg-black rounded text-white h-100 d-flex flex-column">
+  <div class="movie-poster mb-2">
+    <img [src]="'https://image.tmdb.org/t/p/w185' + data.poster_path" alt="film poster" class="img-fluid rounded">
   </div>
+
+  <div class="movie-title fw-semibold small text-truncate px-1">{{data.title || data.name}}</div>
+
+  <div class="movie-meta d-flex flex-wrap gap-2 mt-auto px-1 pb-1">
+    <div class="badge-custom small">{{data.origin_country || data.original_language}}</div>
+    <div class="badge-custom small"><i class="fas fa-calendar-alt"></i> {{data.release_date || data.first_air_date}}</div>
+  </div>
+</div>
+
 

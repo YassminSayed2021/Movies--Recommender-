@@ -3,9 +3,10 @@ import { RecentlyUpdatedComponent } from '../recently-updated/recently-updated.c
 import { NewReleaseComponent } from '../new-release/new-release.component';
 import { HeaderComponent } from '../header/header.component';
 
+
 @Component({
   selector: 'app-home-page',
-  imports: [RecentlyUpdatedComponent, NewReleaseComponent, HeaderComponent],
+  imports: [RecentlyUpdatedComponent, NewReleaseComponent, RecommendedComponent, HeaderComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',
 })

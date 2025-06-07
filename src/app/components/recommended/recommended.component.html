@@ -1,0 +1,50 @@
+<h2 class="mt-4">Popular</h2>
+
+<!-- <div class="d-flex justify-content-end mb-2">
+  <button class="view btn btn-outline-light btn-sm view" (click)="showAllMovies = !showAllMovies">
+    {{ showAllMovies ? 'Show Less' : 'View All' }}
+  </button>
+</div>
+<div class="row g-3">
+  @for (movie of showAllMovies ? recommendedMovies : recommendedMovies.slice(0, 6); track movie.id) {
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+
+    <app-movie-card [data]="movie"></app-movie-card>
+        </div>
+  }
+</div> -->
+
+<div class="d-flex justify-content-start gap-2 mb-2">
+  <button 
+    class="btn px-4 py-2 rounded-pill"
+    [ngClass]="{ 'bg-danger text-white': filterType === 'movies', 'btn-outline-danger': filterType !== 'movies' }"
+    (click)="filterType = 'movies'">
+    Movies
+  </button>
+
+  <button 
+    class="btn px-4 py-2 rounded-pill"
+    [ngClass]="{ 'bg-danger text-white': filterType === 'series', 'btn-outline-danger': filterType !== 'series' }"
+    (click)="filterType = 'series'">
+    Series
+  </button>
+</div>
+
+
+<div class="d-flex justify-content-end mb-2">
+  <button class="view btn btn-outline-light btn-sm" (click)="showAllItems = !showAllItems">
+    {{ showAllItems ? 'Show Less' : 'View All' }}
+  </button>
+</div>
+
+
+<div class="row g-3">
+  @for (item of displayedItems; track item.id) {
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+
+    <app-movie-card [data]="item"></app-movie-card>
+        </div>
+  }
+</div>
+
+

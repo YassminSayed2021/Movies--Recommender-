@@ -5,11 +5,11 @@
     {{ showAllMovies ? 'Show Less' : 'View All' }}
   </button>
 </div>
-<div class="row g-3">
+<div class="row g-2 g-sm-3">
   @for (movie of showAllMovies ? newMovies : newMovies.slice(0, 6); track movie.id) {
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex">
 
-    <app-movie-card [data]="movie"></app-movie-card>
+    <app-movie-card [data]="movie"  class="w-100"></app-movie-card>
         </div>
   }
 </div>
@@ -22,11 +22,11 @@
     {{ showAllSeries ? 'Show Less' : 'View All' }}
   </button>
 </div>
-<div class="row g-3">
+<div class="row g-2 g-sm-3">
   @for (series of showAllSeries ? newSeries : newSeries.slice(0,6); track series.id) {
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex">
 
-    <app-movie-card [data]="series"></app-movie-card>
+    <app-movie-card [data]="series"  class="w-100"></app-movie-card>
 
     </div>
   }

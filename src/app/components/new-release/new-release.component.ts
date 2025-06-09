@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TmdbService } from '../../services/tmdb.service';
 import { MovieCardComponent } from "../movie-card/movie-card.component";
+import { TMDB, TmdbResponse } from '../../interfaces/tmdb';
 
 @Component({
   selector: 'app-new-release',
@@ -9,8 +10,8 @@ import { MovieCardComponent } from "../movie-card/movie-card.component";
   styleUrl: './new-release.component.css'
 })
 export class NewReleaseComponent {
-  newMovies: any[] = [];
-  newSeries: any[] = [];
+  newMovies: TMDB[] = [];
+  newSeries: TMDB[] = [];
 
     showAllMovies = false;
   showAllSeries = false;

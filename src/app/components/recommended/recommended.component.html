@@ -17,25 +17,27 @@
 <div class="d-flex justify-content-start gap-2 mb-2">
   <button 
     class="btn px-4 py-2 rounded-pill"
-    [ngClass]="{ 'bg-danger text-white': filterType === 'movies', 'btn-outline-danger': filterType !== 'movies' }"
+    [ngClass]="{ 'custom-red': filterType === 'movies', 'custom-outline-red': filterType !== 'movies' }"
     (click)="filterType = 'movies'">
     Movies
   </button>
 
   <button 
     class="btn px-4 py-2 rounded-pill"
-    [ngClass]="{ 'bg-danger text-white': filterType === 'series', 'btn-outline-danger': filterType !== 'series' }"
+    [ngClass]="{ 'custom-red': filterType === 'series', 'custom-outline-red': filterType !== 'series' }"
     (click)="filterType = 'series'">
     Series
   </button>
 </div>
 
 
+
 <div class="d-flex justify-content-end mb-2">
-  <button class="view btn btn-outline-light btn-sm" (click)="showAllItems = !showAllItems">
+  <button class="view text-white btn btn-sm" (click)="showAllItems = !showAllItems">
     {{ showAllItems ? 'Show Less' : 'View All' }}
   </button>
 </div>
+
 
 
 <div class="row g-2 g-sm-3">

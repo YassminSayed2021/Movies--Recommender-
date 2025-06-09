@@ -2,3 +2,19 @@
         background-color: #e50914;
 
 }
+
+
+.custom-red {
+  background-color: #e50914 !important;
+  color: white !important;
+  border: none;
+}
+
+.custom-outline-red {
+  color: #e50914 !important;
+  border: 1px solid #e50914 !important;
+  background-color: transparent;
+}
+
+
+

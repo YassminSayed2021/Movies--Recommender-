@@ -7,6 +7,8 @@ import { AiChatComponent } from '../ai-chat/ai-chat.component';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { SliderComponent } from '../slider/slider.component';
+import { SignupComponent } from '../signup/signup.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home-page',
@@ -18,11 +20,17 @@ import { SliderComponent } from '../slider/slider.component';
     HeaderComponent,
     FooterComponent,
     SliderComponent,
+    SignupComponent,
+    CommonModule,
   ],
 
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',
 })
 export class HomePageComponent {
+  showSignup = false;
 
+  toggleSignup(show: boolean) {
+    this.showSignup = show;
+  }
 }

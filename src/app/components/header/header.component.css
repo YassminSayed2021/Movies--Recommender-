@@ -33,3 +33,6 @@
   outline: none;
   box-shadow: none;
 }
+.form-btn {
+  border: none;
+}

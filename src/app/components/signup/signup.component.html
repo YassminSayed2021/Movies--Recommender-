@@ -1,0 +1,82 @@
+<!-- Sidebar Sign Up Form UI -->
+<div
+  class="offcanvas offcanvas-end bg-white text-dark shadow"
+  tabindex="-1"
+  id="signupSidebar"
+  aria-labelledby="signupSidebarLabel"
+>
+  <div class="offcanvas-header border-bottom">
+    <h5 id="signupSidebarLabel" class="mb-0 fw-semibold">Create an Account</h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <form class="text-dark">
+      <!-- First Name -->
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input
+          type="text"
+          class="form-control rounded-3"
+          id="firstName"
+          placeholder="Enter your first name"
+        />
+      </div>
+
+      <!-- Last Name -->
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input
+          type="text"
+          class="form-control rounded-3"
+          id="lastName"
+          placeholder="Enter your last name"
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input
+          type="email"
+          class="form-control rounded-3"
+          id="email"
+          placeholder="Enter your email"
+        />
+      </div>
+
+      <!-- Password -->
+      <div class="mb-4">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control rounded-3"
+          id="password"
+          placeholder="Create a password"
+        />
+      </div>
+
+      <!-- Sign Up Button -->
+      <button
+        type="submit"
+        class="btn btn-light btn-outline-dark w-100 rounded-3 mb-3"
+      >
+        Sign Up
+      </button>
+
+      <!-- Google Sign Up Button -->
+      <button
+        type="button"
+        class="btn btn-outline-dark w-100 rounded-3 d-flex align-items-center justify-content-center gap-2 hover-google"
+      >
+        <i class="fa-brands fa-google fs-5 google-icon"></i>
+        Continue with Google
+      </button>
+    </form>
+  </div>
+</div>

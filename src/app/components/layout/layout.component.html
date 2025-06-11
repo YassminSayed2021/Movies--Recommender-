@@ -1,7 +1,5 @@
-<!-- layout.component.html -->
 <app-header (openSignup)="openSignup()"></app-header>
 
-<!-- Offcanvas components -->
 <app-signup
   *ngIf="!isLoggedIn"
   (switchToLoginForm)="switchFromSignupToLogin()"

@@ -70,5 +70,6 @@ export class LayoutComponent {
 
   logout() {
     this.authService.logout();
+    window.location.reload();
   }
 }

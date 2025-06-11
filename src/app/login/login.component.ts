@@ -90,4 +90,23 @@ export class LoginComponent {
       new bootstrap.Offcanvas(signupCanvas, { backdrop: false }).show();
     }
   }
+  // ====================================
+  loginWithGoogle() {
+    this.authService.loginWithGoogle().subscribe({
+      next: (result) => {
+        console.log('Google login successful', result);
+
+        // Close the sidebar after successful login
+        const loginSidebar = document.getElementById('loginSidebar');
+        if (loginSidebar) {
+          bootstrap.Offcanvas.getInstance(loginSidebar)?.hide();
+        }
+        window.location.reload();
+      },
+      error: (error) => {
+        console.error('Google login error:', error);
+        this.errorMessage = 'Google login failed. Please try again.';
+      },
+    });
+  }
 }

@@ -96,4 +96,28 @@ export class SignupComponent {
       this.signupForm.markAllAsTouched();
     }
   }
+
+  // loging in with google
+  loginWithGoogle() {
+    this.errorMessage = '';
+    this.authService.loginWithGoogle().subscribe({
+      next: (result) => {
+        console.log('Google sign-in successful:', result.user);
+
+        // Hide the signup sidebar
+        const signupCanvas = document.getElementById('signupSidebar');
+        if (signupCanvas) {
+          const bsSignup =
+            bootstrap.Offcanvas.getInstance(signupCanvas) ||
+            new bootstrap.Offcanvas(signupCanvas);
+          bsSignup.hide();
+        }
+        window.location.reload();
+      },
+      error: (err) => {
+        console.error('Google login error:', err);
+        this.errorMessage = 'Failed to log in with Google. Please try again.';
+      },
+    });
+  }
 }

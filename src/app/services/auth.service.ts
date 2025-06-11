@@ -7,6 +7,9 @@ import {
   signOut,
   onAuthStateChanged,
   User,
+  GoogleAuthProvider,
+  signInWithPopup,
+  UserCredential,
 } from '@angular/fire/auth';
 import { BehaviorSubject, from, Observable } from 'rxjs';
 
@@ -17,7 +20,6 @@ export class AuthService {
   isLoggedIn$ = this.loggedIn.asObservable();
 
   constructor() {
-    // Watch auth state
     onAuthStateChanged(this.firebaseAuth, (user: User | null) => {
       this.loggedIn.next(!!user);
     });
@@ -38,13 +40,18 @@ export class AuthService {
     return from(promise);
   }
 
-  login(email: string, password: string): Observable<any> {
+  login(email: string, password: string): Observable<UserCredential> {
     return from(signInWithEmailAndPassword(this.firebaseAuth, email, password));
   }
 
-  logout(): void {
-    signOut(this.firebaseAuth).then(() => {
+  logout(): Promise<void> {
+    return signOut(this.firebaseAuth).then(() => {
       this.loggedIn.next(false);
     });
+  }
+
+  loginWithGoogle(): Observable<UserCredential> {
+    const provider = new GoogleAuthProvider();
+    return from(signInWithPopup(this.firebaseAuth, provider));
   }
 }

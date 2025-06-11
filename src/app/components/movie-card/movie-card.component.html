@@ -10,7 +10,7 @@
     </div>
   </div> -->
 
-
+<a [routerLink]="['/details', data.id]">
   <div class="movie-card shadow-sm p-2 bg-black rounded text-white h-100 d-flex flex-column">
   <div class="movie-poster mb-2">
     <img [src]="'https://image.tmdb.org/t/p/w185' + data.poster_path" alt="film poster" class="img-fluid rounded">
@@ -23,5 +23,5 @@
     <div class="badge-custom small"><i class="fas fa-calendar-alt"></i> {{data.release_date || data.first_air_date}}</div>
   </div>
 </div>
-
+</a>
 

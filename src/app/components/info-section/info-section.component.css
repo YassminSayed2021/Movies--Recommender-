@@ -1,0 +1,10 @@
+.btn-netflix {
+  background-color: #e50914;
+  color: white;
+  border: none;
+}
+
+.btn-netflix:hover {
+  background-color: #b20710;
+  color: white;
+}

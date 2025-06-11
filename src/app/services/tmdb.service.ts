@@ -82,5 +82,13 @@ getReviews(mediaType: 'movie' | 'tv', id: number): Observable<{ results: Review[
 
 
 
+search(query: string): Observable<TmdbResponse> {
+  return this.http.get<TmdbResponse>(
+    `${this.baseUrl}/search/multi?api_key=${this.apiKey}&language=en-US&query=${query}`
+  );
+}
+
+
+
 
 }

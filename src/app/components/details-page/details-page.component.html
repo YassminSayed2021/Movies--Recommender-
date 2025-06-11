@@ -19,13 +19,13 @@
   ></app-info-section>
 
   } @else {
-  <p>No Details available</p>
+  <p class="text-center text-danger">No Details available</p>
   } @if (seasons != null) {
   <app-seasons [data]="seasons" [id]="seriesId" type="series"></app-seasons>
   }@else if (seriesInfo != null){
   <app-seasons [data]="seasons" [id]="movieId" type="movie"></app-seasons>
 
   } @else {
-  <p>No Details available</p>
+  <p class="text-center text-danger">No Details available</p>
   }
 </div>

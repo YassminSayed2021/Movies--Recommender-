@@ -1,0 +1,10 @@
+<div class="row">
+  @for (item of results; track item.id) {
+    <div class="col-md-3 mb-4">
+      <app-movie-card [data]="item"></app-movie-card>
+    </div>
+  }
+</div>
+
+
+

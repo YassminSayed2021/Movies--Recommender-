@@ -11,7 +11,7 @@
     </button>
 
     <!-- Logo -->
-    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" routerLink="/">
       <i class="fa-solid fa-clapperboard"></i>
       MovieQ
     </a>
@@ -46,18 +46,19 @@
       <!-- Left Links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex gap-lg-3">
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Home</a>
+          <a class="nav-link text-white" routerLink="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Movies</a>
+          <a class="nav-link text-white" routerLink="/" fragment="movies">Movies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Series</a>
+          <a class="nav-link text-white" routerLink="/" fragment="series">Series</a>
         </li>
       </ul>
 
       <!-- Search Bar -->
-      <form
+      <form #searchForm = "ngForm"
+             (ngSubmit) = "onSearch(searchForm)"
         class="d-flex mx-5 flex-grow-1 justify-content-center my-2 my-lg-0"
         style="max-width: 500px"
       >
@@ -66,6 +67,9 @@
           type="search"
           placeholder="Search movies..."
           aria-label="Search"
+          [(ngModel)]="searchQuery"
+          name="search" 
+
         />
         <button class="btn ms-n4 search-btn" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i>

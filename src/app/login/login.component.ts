@@ -39,13 +39,11 @@ export class LoginComponent {
           console.log('Logged in');
           this.loginForm.reset();
 
-          // ✅ Close login sidebar
           const loginSidebar = document.getElementById('loginSidebar');
           if (loginSidebar) {
             bootstrap.Offcanvas.getInstance(loginSidebar)?.hide();
           }
 
-          // ✅ Close signup sidebar if open
           const signupSidebar = document.getElementById('signupSidebar');
           if (signupSidebar) {
             bootstrap.Offcanvas.getInstance(signupSidebar)?.hide();

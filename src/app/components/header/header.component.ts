@@ -27,7 +27,7 @@ export class HeaderComponent implements AfterViewInit {
     const navbar = document.getElementById('navbarContent');
     if (navbar) {
       this.navbarCollapseInstance = new bootstrap.Collapse(navbar, {
-        toggle: false, // Important: Don't auto-toggle on init
+        toggle: false,
       });
     }
   }

@@ -1,0 +1,43 @@
+<!-- <div class="reviews-section mt-5">
+  <h4 class="text-white mb-4">Reviews</h4>
+
+  @if (reviews.length > 0) {
+    @for (review of reviews; track review.id) {
+      <div class="review-card mb-4 p-3 rounded bg-dark text-white">
+        <div class="d-flex align-items-center mb-2">
+          <img 
+            [src]="review.author_details.avatar_path 
+                    ? 'https://image.tmdb.org/t/p/w45' + review.author_details.avatar_path 
+                    : 'https://ui-avatars.com/api/?name=' + review.author" 
+            alt="Avatar" 
+            class="rounded-circle me-3" 
+            width="45" height="45">
+          
+          <div>
+            <h6 class="mb-0">{{ review.author }}</h6>
+            <small class="text-muted">{{ review.created_at  }}</small>
+          </div>
+        </div>
+
+        <div class="rating mb-2">
+          <i class="bi bi-star-fill text-warning"></i>
+          <span>{{ review.author_details.rating ?? 'N/A' }}/10</span>
+        </div>
+
+        <p class="mb-0">{{ review.content }}</p>
+      </div>
+    }
+  } @else {
+    @if (!isLoading) {
+      <div class="text-muted">
+        No reviews available.
+      </div>
+    }
+  }
+
+  @if (isLoading) {
+    <div class="text-light">
+      Loading reviews...
+    </div>
+  }
+</div> -->

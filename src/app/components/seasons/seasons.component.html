@@ -1,0 +1,82 @@
+  <!-- <div class="mt-5">
+    <h4 class="mb-3">{{getseasons()}}<i class="bi bi-chevron-down"></i></h4>
+
+    <div class="row g-3">
+      <div class="col-12 col-md-6">
+      <button class="btn btn-netflix w-100 d-flex align-items-center gap-2">
+   Episode 5: The Janitor's Boy
+</button>
+
+      </div>
+      <div class="col-12 col-md-6">
+        <button class="btn btn-secondary w-100 d-flex align-items-center gap-2">
+         Episode 2: Holston's Pick
+        </button>
+      </div>
+      <div class="col-12 col-md-6">
+        <button class="btn btn-secondary w-100 d-flex align-items-center gap-2">
+        Episode 3: Machines
+        </button>
+      </div>
+      <div class="col-12 col-md-6">
+        <button class="btn btn-secondary w-100 d-flex align-items-center gap-2">
+        Episode 4: Truth
+        </button>
+      </div>
+      <div class="col-12 col-md-6 fav">
+ 
+<button class="btn btn-secondary w-100 d-flex align-items-center gap-2">
+         Episode 4: Truth
+        </button>
+      </div>
+      <div class="col-12 col-md-6">
+        <button class="btn btn-secondary w-100 d-flex align-items-center gap-2">
+        Episode 6: The Relic
+        </button>
+      </div>
+    </div>
+  </div> -->
+
+
+
+<div class="mt-5 seasons-wrapper mx-auto">
+  <h4 class="mb-4 text-white">Seasons</h4>
+
+  @for (season of data.seasons; track season.id) {
+    <div class="mb-3">
+      <button 
+        class="btn w-100 text-start d-flex justify-content-between align-items-center border-0 px-3 py-2"
+        [ngClass]="{
+          'btn-red': selectedSeasonId === season.id,
+          'btn-outline-light text-white': selectedSeasonId !== season.id
+        }"
+        (click)="toggleSeason(season.id, season.season_number)"
+>  
+
+        {{ season.name }}
+        <i class="bi" [ngClass]="{
+          'bi-chevron-up': selectedSeasonId === season.id,
+          'bi-chevron-down': selectedSeasonId !== season.id
+        }"></i>
+      </button>
+
+      @if (selectedSeasonId === season.id) {
+        <div class="mt-2 px-2">
+          @if (!season.episodes?.length) {
+            <p class="text-muted">No episodes found.</p>
+          } @else {
+            <div class="row g-2">
+              @for (episode of season.episodes; track episode.id) {
+                <div class="col-12 col-md-6">
+                  <button class="btn btn-secondary w-100 text-start">
+                    Episode {{ episode.episode_number }}: {{ episode.name || 'Untitled' }}
+                  </button>
+                </div>
+              }
+            </div>
+          }
+        </div>
+      }
+    </div>
+  }
+</div>

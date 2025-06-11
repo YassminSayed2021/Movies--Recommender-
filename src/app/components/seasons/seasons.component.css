@@ -1,0 +1,32 @@
+
+
+
+
+
+.seasons-wrapper {
+  max-width: 700px;
+}
+
+
+.btn-red {
+  background-color: #e50914 !important;
+  color: white !important;
+  border: 1px solid #e50914 !important;
+}
+
+
+.btn-red:hover {
+  background-color: #e50914 !important;
+  color: white !important;
+  border-color: #e50914 !important;
+}
+
+
+.btn-outline-light:hover {
+  background-color: transparent !important;
+  color: white !important;
+  border-color: white !important;
+}
+
+
+

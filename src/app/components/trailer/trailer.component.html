@@ -1,0 +1,28 @@
+<!-- @if (trailer?.site === 'YouTube') {
+  <div class="video-container">
+    <iframe 
+      width="100%" 
+      height="400" 
+      [src]="'https://www.youtube.com/embed/' + trailerKey | safeUrl" 
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+} @else {
+  <p>Trailer not available</p>
+} -->
+
+@if (trailerKey) {
+  <div class="embed-responsive embed-responsive-16by9 mb-4 shadow rounded">
+    <iframe  class="embed-responsive-item"
+      width="100%" 
+      height="400" 
+      [src]="'https://www.youtube.com/embed/' + trailerKey | safeUrl" 
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+} @else {
+  <p class="text-center text-danger">Trailer not available</p>
+}
+

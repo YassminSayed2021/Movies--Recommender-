@@ -48,7 +48,7 @@ export class SignupComponent {
         new bootstrap.Offcanvas(signupCanvas);
       const bsLogin =
         bootstrap.Offcanvas.getInstance(loginCanvas) ||
-        new bootstrap.Offcanvas(loginCanvas);
+        new bootstrap.Offcanvas(loginCanvas, { backdrop: false });
 
       bsSignup.hide();
       bsLogin.show();

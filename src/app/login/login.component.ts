@@ -87,7 +87,7 @@ export class LoginComponent {
 
     if (loginCanvas && signupCanvas) {
       bootstrap.Offcanvas.getInstance(loginCanvas)?.hide();
-      new bootstrap.Offcanvas(signupCanvas).show();
+      new bootstrap.Offcanvas(signupCanvas, { backdrop: false }).show();
     }
   }
 }

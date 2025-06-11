@@ -68,7 +68,7 @@
             <div class="row g-2">
               @for (episode of season.episodes; track episode.id) {
                 <div class="col-12 col-md-6">
-                  <button class="btn btn-secondary w-100 text-start">
+<button class="btn btn-secondary w-100 episode-btn">
                     Episode {{ episode.episode_number }}: {{ episode.name || 'Untitled' }}
                   </button>
                 </div>

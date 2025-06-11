@@ -2,16 +2,13 @@ import { Component } from '@angular/core';
 import { TrailerComponent } from "../trailer/trailer.component";
 import { ActivatedRoute } from '@angular/router';
 import { TmdbService } from '../../services/tmdb.service';
-import { HeaderComponent } from "../header/header.component";
-import { FooterComponent } from "../footer/footer.component";
 import { InfoSectionComponent } from "../info-section/info-section.component";
 import { Review, TMDB, TmdbResponse } from '../../interfaces/tmdb';
 import { SeasonsComponent } from "../seasons/seasons.component";
-import { ReviewsComponent } from "../reviews/reviews.component";
 
 @Component({
   selector: 'app-details-page',
-  imports: [TrailerComponent, HeaderComponent, FooterComponent, InfoSectionComponent, SeasonsComponent],
+  imports: [TrailerComponent, InfoSectionComponent, SeasonsComponent],
   templateUrl: './details-page.component.html',
   styleUrl: './details-page.component.css'
 })

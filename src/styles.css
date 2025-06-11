@@ -5,6 +5,10 @@ body {
   padding: 0;
   height: 100%;
   background-color: #000; /* optional for matching theme */
+  
+  scroll-behavior: smooth;
+
+
 }
 
 body {

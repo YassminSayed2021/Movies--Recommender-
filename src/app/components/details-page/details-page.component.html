@@ -1,45 +1,31 @@
-<app-header></app-header>
-
 <div class="container-fluid home text-white py-4">
-
-
-@if (movieId != null) {
+  @if (movieId != null) {
   <app-trailer [id]="movieId" type="movie"></app-trailer>
-} @else if (seriesId != null) {
+  } @else if (seriesId != null) {
   <app-trailer [id]="seriesId" type="series"></app-trailer>
-} @else {
+  } @else {
   <p>No trailer available</p>
-}
-
-
-
-
-  @if (moviesInfo != null) {
-    <app-info-section [data]="moviesInfo" [id]="movieId" type="movie"></app-info-section>
+  } @if (moviesInfo != null) {
+  <app-info-section
+    [data]="moviesInfo"
+    [id]="movieId"
+    type="movie"
+  ></app-info-section>
   }@else if (seriesInfo != null){
-        <app-info-section [data]="seriesInfo" [id]="seriesId" type="series"></app-info-section>
+  <app-info-section
+    [data]="seriesInfo"
+    [id]="seriesId"
+    type="series"
+  ></app-info-section>
 
   } @else {
   <p>No Details available</p>
-}
-
-  @if (seasons != null) {
-    <app-seasons [data]="seasons" [id]="seriesId" type="series"></app-seasons>
+  } @if (seasons != null) {
+  <app-seasons [data]="seasons" [id]="seriesId" type="series"></app-seasons>
   }@else if (seriesInfo != null){
-        <app-seasons [data]="seasons" [id]="movieId" type="movie"></app-seasons>
+  <app-seasons [data]="seasons" [id]="movieId" type="movie"></app-seasons>
 
   } @else {
   <p>No Details available</p>
-}
-
-
-
-
-
-
-
-
-
-<app-footer></app-footer>
-
+  }
 </div>

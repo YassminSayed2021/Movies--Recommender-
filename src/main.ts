@@ -1,16 +1,7 @@
-import { ApplicationConfig } from '@angular/core';
-import { provideHttpClient } from '@angular/common/http';
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { provideAuth, getAuth } from '@angular/fire/auth';
-import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { appConfig } from './app/app.config';
+import { AppComponent } from './app/app.component';
 
-import { firebase } from './environments/firebase';
-
-export const appConfig: ApplicationConfig = {
-  providers: [
-    provideHttpClient(),
-    provideFirebaseApp(() => initializeApp(firebase.firebaseConfig)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
-  ],
-};
+bootstrapApplication(AppComponent, appConfig).catch((err) =>
+  console.error(err)
+);

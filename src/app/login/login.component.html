@@ -1,0 +1,99 @@
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+  <div
+    class="offcanvas offcanvas-end bg-white text-dark shadow"
+    tabindex="-1"
+    id="loginSidebar"
+    aria-labelledby="loginSidebarLabel"
+  >
+    <div class="offcanvas-header border-bottom">
+      <h5 id="loginSidebarLabel" class="mb-0 fw-semibold">Log In</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+
+    <div class="offcanvas-body">
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="loginEmail" class="form-label">Email </label>
+        <input
+          type="email"
+          class="form-control rounded-3"
+          id="loginEmail"
+          formControlName="email"
+          placeholder="Enter your email"
+        />
+        <div
+          class="text-danger small mt-1"
+          *ngIf="
+            loginForm.get('email')?.touched && loginForm.get('email')?.invalid
+          "
+        >
+          <span *ngIf="loginForm.get('email')?.errors?.['required']">
+            Email is required.
+          </span>
+          <span *ngIf="loginForm.get('email')?.errors?.['email']">
+            Please enter a valid email.
+          </span>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="mb-4">
+        <label for="loginPassword" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control rounded-3"
+          id="loginPassword"
+          formControlName="password"
+          placeholder="Enter your password"
+        />
+        <div
+          class="text-danger small mt-1"
+          *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']"
+        >
+          Password is required.
+        </div>
+      </div>
+
+      <!-- Firebase or API Error Message -->
+      <div *ngIf="errorMessage" class="alert alert-danger text-center py-2">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Login Button -->
+      <button
+        type="submit"
+        class="btn btn-light btn-outline-dark w-100 rounded-3 mb-3"
+      >
+        Log In
+      </button>
+
+      <!-- Google Login -->
+      <button
+        type="button"
+        class="btn btn-outline-dark w-100 rounded-3 d-flex align-items-center justify-content-center gap-2 hover-google"
+      >
+        <i class="fa-brands fa-google fs-5 google-icon"></i>
+        Continue with Google
+      </button>
+
+      <!-- Switch to Sign Up -->
+      <div class="text-center mt-2">
+        <p class="small">
+          Don’t have an account?
+          <a
+            href="#"
+            (click)="switchToSignup($event)"
+            class="text-decoration-underline text-black"
+          >
+            Sign Up
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</form>

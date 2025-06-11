@@ -1,31 +1,39 @@
-<!-- Sidebar Sign Up Form UI -->
-<div
-  class="offcanvas offcanvas-end bg-white text-dark shadow"
-  tabindex="-1"
-  id="signupSidebar"
-  aria-labelledby="signupSidebarLabel"
->
-  <div class="offcanvas-header border-bottom">
-    <h5 id="signupSidebarLabel" class="mb-0 fw-semibold">Create an Account</h5>
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="offcanvas"
-      aria-label="Close"
-    ></button>
-  </div>
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div
+    class="offcanvas offcanvas-end bg-white text-dark shadow"
+    tabindex="-1"
+    id="signupSidebar"
+    aria-labelledby="signupSidebarLabel"
+  >
+    <div class="offcanvas-header border-bottom">
+      <h5 id="signupSidebarLabel" class="mb-0 fw-semibold">
+        Create an Account
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
 
-  <div class="offcanvas-body">
-    <form class="text-dark">
+    <div class="offcanvas-body">
       <!-- First Name -->
-      <div class="mb-3">
+      <div class="mb-3 text-dark">
         <label for="firstName" class="form-label">First Name</label>
         <input
           type="text"
           class="form-control rounded-3"
           id="firstName"
+          formControlName="firstName"
           placeholder="Enter your first name"
         />
+        <div
+          class="text-danger small mt-1"
+          *ngIf="signupForm.get('firstName')?.touched && signupForm.get('firstName')?.errors?.['required']"
+        >
+          First name is required.
+        </div>
       </div>
 
       <!-- Last Name -->
@@ -35,21 +43,43 @@
           type="text"
           class="form-control rounded-3"
           id="lastName"
+          formControlName="lastName"
           placeholder="Enter your last name"
         />
+        <div
+          class="text-danger small mt-1"
+          *ngIf="signupForm.get('lastName')?.touched && signupForm.get('lastName')?.errors?.['required']"
+        >
+          Last name is required.
+        </div>
       </div>
 
       <!-- Email -->
       <div class="mb-3">
-        <label for="email" class="form-label">Email Address</label>
+        <label for="email" class="form-label">Email </label>
         <input
           type="email"
           class="form-control rounded-3"
           id="email"
+          formControlName="email"
           placeholder="Enter your email"
         />
+        <div
+          class="text-danger small mt-1"
+          *ngIf="
+            signupForm.get('email')?.touched && signupForm.get('email')?.invalid
+          "
+        >
+          <span *ngIf="signupForm.get('email')?.errors?.['required']">
+            Email is required.
+          </span>
+          <span *ngIf="signupForm.get('email')?.errors?.['email']">
+            Please enter a valid email address.
+          </span>
+        </div>
       </div>
 
+      <!-- Password -->
       <!-- Password -->
       <div class="mb-4">
         <label for="password" class="form-label">Password</label>
@@ -57,8 +87,28 @@
           type="password"
           class="form-control rounded-3"
           id="password"
+          formControlName="password"
           placeholder="Create a password"
         />
+        <div
+          class="text-danger small mt-1"
+          *ngIf="
+            signupForm.get('password')?.touched &&
+            signupForm.get('password')?.invalid
+          "
+        >
+          <span *ngIf="signupForm.get('password')?.errors?.['required']">
+            Password is required.
+          </span>
+          <span *ngIf="signupForm.get('password')?.errors?.['minlength']">
+            Password must be at least 8 characters long.
+          </span>
+        </div>
+      </div>
+
+      <!-- Firebase Error Message -->
+      <div *ngIf="errorMessage" class="alert alert-danger text-center py-2">
+        {{ errorMessage }}
       </div>
 
       <!-- Sign Up Button -->
@@ -77,6 +127,20 @@
         <i class="fa-brands fa-google fs-5 google-icon"></i>
         Continue with Google
       </button>
-    </form>
+
+      <!-- Already have an account link -->
+      <div class="text-center mt-2">
+        <p class="small">
+          Already have an account?
+          <a
+            href="#"
+            (click)="switchToLogin($event)"
+            class="text-decoration-underline text-black"
+          >
+            Log In
+          </a>
+        </p>
+      </div>
+    </div>
   </div>
-</div>
+</form>

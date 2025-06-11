@@ -1,5 +1,14 @@
-<app-signup *ngIf="showSignup" (closeModal)="toggleSignup(false)"></app-signup>
-<app-header (openSignup)="toggleSignup(true)"></app-header>
+<app-signup
+  *ngIf="!isLoggedIn"
+  (switchToLoginForm)="switchFromSignupToLogin()"
+></app-signup>
+
+<app-login
+  *ngIf="!isLoggedIn"
+  (switchToSignupForm)="switchFromLoginToSignup()"
+></app-login>
+
+<app-header (openSignup)="openSignup()"></app-header>
 
 <app-slider></app-slider>
 <div class="container-fluid home text-white py-4">

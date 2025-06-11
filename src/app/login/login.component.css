@@ -1,0 +1,19 @@
+.google-icon {
+  transition: color 0.3s ease;
+}
+
+.hover-google:hover .google-icon {
+  color: red;
+}
+.btn-close:focus,
+.btn-close:active {
+  box-shadow: none;
+  outline: none;
+}
+.btn-close {
+  transition: transform 0.6s ease;
+}
+
+.btn-close:hover {
+  transform: rotate(360deg);
+}

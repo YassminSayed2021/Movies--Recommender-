@@ -58,6 +58,15 @@
           Password is required.
         </div>
       </div>
+      <div class="mb-3 text-start">
+        <a
+          href="#"
+          class="text-decoration-underline small text-muted"
+          (click)="onForgotPassword($event)"
+        >
+          Have you forgotten your password?
+        </a>
+      </div>
 
       <!-- Firebase or API Error Message -->
       <div *ngIf="errorMessage" class="alert alert-danger text-center py-2">

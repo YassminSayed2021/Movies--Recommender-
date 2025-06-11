@@ -10,6 +10,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   UserCredential,
+  sendPasswordResetEmail,
 } from '@angular/fire/auth';
 import { BehaviorSubject, from, Observable } from 'rxjs';
 
@@ -53,5 +54,8 @@ export class AuthService {
   loginWithGoogle(): Observable<UserCredential> {
     const provider = new GoogleAuthProvider();
     return from(signInWithPopup(this.firebaseAuth, provider));
+  }
+  resetPassword(email: string): Observable<void> {
+    return from(sendPasswordResetEmail(this.firebaseAuth, email));
   }
 }

@@ -109,4 +109,25 @@ export class LoginComponent {
       },
     });
   }
+  onForgotPassword(event: Event) {
+    event.preventDefault();
+
+    const email = this.loginForm.get('email')?.value;
+
+    if (!email) {
+      this.errorMessage = 'Please enter your email to reset your password.';
+      return;
+    }
+
+    this.authService.resetPassword(email).subscribe({
+      next: () => {
+        this.errorMessage = '';
+        alert('A password reset email has been sent. Please check your inbox.');
+      },
+      error: (err) => {
+        console.error(err);
+        this.errorMessage = 'Failed to send reset email. Please try again.';
+      },
+    });
+  }
 }

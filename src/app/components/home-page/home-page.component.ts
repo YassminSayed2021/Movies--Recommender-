@@ -18,7 +18,7 @@ import { SliderComponent } from '../slider/slider.component';
     HeaderComponent,
     FooterComponent,
     SliderComponent,
-  ],
+],
 
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',

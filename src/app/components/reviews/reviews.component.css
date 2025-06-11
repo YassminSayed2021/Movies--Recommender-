@@ -1,0 +1,13 @@
+.reviews-section {
+  max-width: 800px;
+  margin: auto;
+}
+
+.review-card {
+  background-color: #1c1c1c;
+  border: 1px solid #333;
+}
+
+.review-card img {
+  object-fit: cover;
+}

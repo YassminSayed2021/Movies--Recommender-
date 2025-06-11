@@ -4,28 +4,43 @@
     <button
       class="navbar-toggler order-lg-2"
       type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarContent"
-      aria-controls="navbarContent"
-      aria-expanded="false"
       aria-label="Toggle navigation"
+      (click)="toggleNavbar()"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <!-- Logo -->
     <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
       <i class="fa-solid fa-clapperboard"></i>
       MovieQ
     </a>
 
+    <!-- My form & Fav buttons -->
     <div class="d-flex gap-4 align-items-center order-lg-3">
-      <a class="text-white fs-5 fw-bold" href="#"
-        ><i class="fa-regular fa-user"></i
-      ></a>
-      <a class="text-white fs-5 fw-bold" href="#"
-        ><i class="fa-regular fa-heart"></i
-      ></a>
+      <ng-container *ngIf="isLoggedIn; else showLogin">
+        <button
+          class="form-btn btn fw-bold text-white fs-5 fw-bold"
+          (click)="logout()"
+        >
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </button>
+      </ng-container>
+
+      <ng-template #showLogin>
+        <button
+          class="form-btn btn text-white fs-5 fw-bold"
+          (click)="onUserIconClick()"
+        >
+          <i class="fa-regular fa-user"></i>
+        </button>
+      </ng-template>
+
+      <a class="text-white fs-5 fw-bold" href="#">
+        <i class="fa-regular fa-heart"></i>
+      </a>
     </div>
+
     <!-- Collapsible Content -->
     <div class="collapse navbar-collapse order-lg-1" id="navbarContent">
       <!-- Left Links -->
